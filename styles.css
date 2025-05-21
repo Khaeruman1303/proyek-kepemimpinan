@@ -1,143 +1,480 @@
+:root {
+  --primary-color: #ff0000; /* Merah */
+  --secondary-color: #b80000; /* Merah tua */
+  --accent-color: #ff0000; /* Hitam */
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: var(--dark-color);
+  padding-top: 56px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("assets/hero-bg.jpeg");
+  /* atau untuk gradien merah-hitam */
+  /* background: linear-gradient(135deg, rgba(255,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%), url("assets/hero-bg.jpeg"); */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.lightbox-open #mainNavbar {
+  z-index: 100; /* lebih rendah dari lightbox */
 }
 
 .navbar {
-  background-color: #5cb338;
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+.navbar.scrolled {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar li {
-  float: left;
+.hero-content {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 2rem;
 }
 
-.navbar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-.navbar li a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-section#video {
-  margin-top: 100px;
-}
-
-.carousel,
-.gallery {
-  padding: 20px;
-  text-align: center;
-}
-
-.carousel-inner,
-.gallery-inner {
+.section-header {
   position: relative;
-  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Style untuk video carousel */
+#videoCarousel {
+  position: relative;
   overflow: hidden;
 }
 
-.carousel-item {
-  display: none;
+#videoCarousel .carousel-inner {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.carousel-item.active {
-  display: block;
+#videoCarousel video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
+#videoCarousel .carousel-control-prev,
+#videoCarousel .carousel-control-next {
+  width: 5%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  margin: 0 10px;
+}
+
+#videoCarousel .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+}
+
+#videoCarousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+#videoCarousel .carousel-indicators button.active {
+  background-color: #fff;
+}
+
+/* Pastikan video tidak overflow */
+.carousel-inner {
+  overflow: hidden;
+}
+
+/* Style untuk video */
+#videoCarousel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+/* Perbaikan tampilan controls */
 .carousel-control-prev,
 .carousel-control-next {
-  cursor: pointer;
-  position: absolute;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.carousel-control-next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  width: 8%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
 }
 
-/* Animasi untuk gallery */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+/* Container utama */
+#posterCarousel {
+  max-width: 50%;
+  margin: 0 auto;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+/* Container untuk poster A4 */
+.poster-container {
+  position: relative;
+  padding-top: 141.4%; /* Rasio 1:1.414 untuk A4 */
+  overflow: hidden;
+  background: white;
+}
+
+/* Gambar poster */
+.poster-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0px;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.lightbox-content {
+  max-height: 90vh;
+  max-width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.lightbox-controls {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Indikator */
+.carousel-indicators {
+  bottom: -40px;
+}
+
+/* Navigasi */
+#posterCarousel > .carousel-control-prev,
+#posterCarousel > .carousel-control-prev-icon,
+#posterCarousel > .carousel-control-next,
+#posterCarousel > .carousel-control-next-icon {
+  width: 8%;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .poster-container {
+    padding-top: 141.4%; /* Tetap pertahankan rasio A4 */
   }
 }
 
-.gallery img {
-  animation: fadeIn 1s ease-in-out;
+/* Custom CSS untuk bagian poster */
+#poster .carousel {
+  border: 3px solid white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#poster .carousel-inner {
+  transition: transform 0.5s ease;
+}
+
+#poster .carousel-item img {
+  object-fit: contain;
+  max-height: 500px;
+  background-color: #f8f9fa;
+}
+
+#poster .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+#poster .carousel-indicators button:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 992px) {
+  #poster .carousel-item img {
+    max-height: 400px;
+  }
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 15px;
+  grid-auto-flow: dense;
+}
+
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
+.masonry-item:hover {
+  transform: translateY(-5px);
+  z-index: 2;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.masonry-item:hover img {
   transform: scale(1.05);
 }
 
-/* Container untuk gallery */
-.gallery-inner {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+/* Penyesuaian untuk berbagai aspect ratio */
+.masonry-item.landscape {
+  grid-column: span 2;
 }
 
-/* Track untuk gambar-gambar */
-.gallery-track {
+.masonry-item.portrait {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
+  }
+
+  .masonry-item.landscape {
+    grid-column: span 1;
+  }
+
+  .masonry-item.portrait {
+    grid-row: span 1;
+  }
+}
+
+.view-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
-  animation: scrollGallery 20s linear infinite;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Animasi scroll */
-@keyframes scrollGallery {
-  0% {
-    transform: translateX(0%);
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-  100% {
-    transform: translateX(-50%);
+
+  .gallery-item img {
+    height: 150px;
   }
 }
 
-/* Styling untuk gambar */
-.gallery-track img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  margin-right: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Lightbox Styles */
+#docsLightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-controls {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  pointer-events: all;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.lightbox-counter {
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.gallery-track img:hover {
+.close-btn:hover {
   transform: scale(1.1);
 }

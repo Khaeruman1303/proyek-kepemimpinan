@@ -3,104 +3,481 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyek Kepemimpinan - Anti Bullying</title>
+    <title>Stop Bullying - Kampanye Anti Perundungan</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- Hero Section -->
+    <header class="hero">
+      <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: rgba(0, 0, 0, 0.7)">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#"> <i class="fas fa-hands-helping me-2"></i>Stop Bullying </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#video">Video</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#poster">Poster</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#dokumentasi">Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hero-content text-center">
+        <h1 class="display-4 fw-bold">BERSAMA HENTIKAN BULLYING</h1>
+        <p class="lead">Jadilah Teman Bukan Lawan</p>
+        <a href="#video" class="btn btn-primary mt-3">Lihat Projek Kami</a>
+      </div>
+    </header>
+
+    <section id="video" class="py-5">
       <div class="container">
-        <a class="navbar-brand" href="#">Anti Bullying</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#video">Video</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#poster">Poster</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#dokumentasi">Dokumentasi</a>
-            </li>
-          </ul>
+        <div class="section-header text-center mb-5">
+          <h2 class="fw-bold">Video</h2>
+          <p class="text-muted">Karya kami yang mengangkat kisah tentang dampak bullying dan pentingnya empati</p>
         </div>
-      </div>
-    </nav>
 
-    <section id="video" class="container">
-      <h2 class="text-center mb-4">Video Anti Bullying</h2>
-      <div id="videoCarousel" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <video controls class="d-block w-100">
-              <source src="assets/video/1.mp4" type="video/mp4" />
-              Browser Anda tidak mendukung tag video.
-            </video>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="false">
+              <!-- data-bs-ride="false" matikan auto-slide -->
+              <div class="carousel-inner ratio ratio-16x9 rounded-3 shadow">
+                <!-- Video 1 -->
+                <div class="carousel-item active">
+                  <video controls class="w-100" id="video1">
+                    <source src="assets/video/1.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <!-- Video 2 -->
+                <div class="carousel-item">
+                  <video controls class="w-100" id="video2">
+                    <source src="assets/video/2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+
+              <!-- Carousel Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Video 1"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Video 2"></button>
+              </div>
+            </div>
           </div>
-          <div class="carousel-item">
-            <video controls class="d-block w-100">
-              <source src="assets/video/2.mp4" type="video/mp4" />
-              Browser Anda tidak mendukung tag video.
-            </video>
+          <div class="col-lg-6">
+            <h3 class="fw-bold mb-3">Sinopsis Film Pendek</h3>
+            <p>
+              Film pendek kami menceritakan tentang perilaku bullying yang sering terjadi di sekolah bahkan di tingkat SD sekalipun. Melalui karya ini, kami ingin menyampaikan pesan bahwa bullying sangat berdampak buruk baik bagi korban
+              maupun pelaku.
+            </p>
+
+            <div class="mt-4">
+              <h4 class="fw-bold">Pesan Utama:</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i> Bullying berdampak jangka panjang pada korban</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i> Setiap orang berhak merasa aman dan dihargai</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i> Jadilah teman, bukan lawan</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i> Berani melapor jika melihat bullying</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </section>
 
-    <section id="poster" class="container my-5">
-      <h2 class="text-center mb-4">Poster Anti Bullying</h2>
-      <div id="posterCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/poster/1.jpg" class="d-block w-100" alt="Poster 1" />
+    <section id="poster" class="py-5 bg-light">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="fw-bold">Poster</h2>
+          <p class="text-muted">Karya visual kami yang menyampaikan pesan anti-bullying</p>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-1 order-2">
+            <div class="pe-lg-4">
+              <h3 class="fw-bold mb-3">Pesan Melalui Visual</h3>
+              <p>Poster-poster ini dirancang untuk menyampaikan pesan anti-bullying dengan cara visual. Setiap poster mengangkat tema berbeda tentang dampak perundungan dan pentingnya menciptakan lingkungan yang inklusif.</p>
+
+              <div class="mt-4">
+                <h4 class="fw-bold mb-3">Tema Poster:</h4>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Menjadi teman yang baik</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Jenis-jenis bullying</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Jadi teman bukan lawan</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Jangan jadikan bullying kebiasaan</li>
+                  <li class="mb-2"><i class="fas fa-check-circle text-danger me-2"></i>Mari bersahabat</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="assets/poster/2.jpg" class="d-block w-100" alt="Poster 2" />
+
+          <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0 poster-carousel-wrapper">
+            <div id="posterCarousel" class="carousel slide shadow-lg rounded-3" data-bs-ride="carousel">
+              <div class="carousel-inner rounded-3">
+                <!-- Poster 1 -->
+                <div class="carousel-item active">
+                  <div class="poster-container">
+                    <img src="assets/poster/1.png" class="poster-img" alt="Poster 1" onclick="zoomPoster(this)" />
+                  </div>
+                </div>
+
+                <!-- Poster 2 -->
+                <div class="carousel-item">
+                  <div class="poster-container">
+                    <img src="assets/poster/2.png" class="poster-img" alt="Poster 2" onclick="zoomPoster(this)" />
+                  </div>
+                </div>
+
+                <!-- Poster 3 -->
+                <div class="carousel-item">
+                  <div class="poster-container">
+                    <img src="assets/poster/3.png" class="poster-img" alt="Poster 3" onclick="zoomPoster(this)" />
+                  </div>
+                </div>
+
+                <!-- Poster 4 -->
+                <div class="carousel-item">
+                  <div class="poster-container">
+                    <img src="assets/poster/4.png" class="poster-img" alt="Poster 4" onclick="zoomPoster(this)" />
+                  </div>
+                </div>
+
+                <!-- Poster 5 -->
+                <div class="carousel-item">
+                  <div class="poster-container">
+                    <img src="assets/poster/5.png" class="poster-img" alt="Poster 5" onclick="zoomPoster(this)" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lightbox Overlay -->
+              <div id="posterLightbox" class="lightbox" onclick="closeLightbox()">
+                <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+                <img class="lightbox-content" id="lightboxImg" />
+                <div class="lightbox-controls">
+                  <button class="lightbox-prev" onclick="navigateLightbox(-1, event)">&#10094;</button>
+                  <button class="lightbox-next" onclick="navigateLightbox(1, event)">&#10095;</button>
+                </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#posterCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#posterCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#posterCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#posterCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#posterCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#posterCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#posterCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#posterCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#posterCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </section>
 
-    <section id="dokumentasi" class="container my-5">
-      <h2 class="text-center mb-4">Dokumentasi Proyek</h2>
-      <div class="gallery-inner">
-        <div class="gallery-track">
-          <img src="assets/dokumentasi/1.jpg" alt="Dokumentasi 1" />
-          <img src="assets/dokumentasi/2.jpg" alt="Dokumentasi 2" />
-          <img src="assets/dokumentasi/3.jpg" alt="Dokumentasi 3" />
-          <img src="assets/dokumentasi/4.jpg" alt="Dokumentasi 4" />
-          <img src="assets/dokumentasi/5.jpg" alt="Dokumentasi 5" />
-          <img src="assets/dokumentasi/6.jpg" alt="Dokumentasi 6" />
-          <img src="assets/dokumentasi/7.jpg" alt="Dokumentasi 6" />
-          <img src="assets/dokumentasi/8.jpg" alt="Dokumentasi 6" />
-          <img src="assets/dokumentasi/9.jpg" alt="Dokumentasi 6" />
-          <img src="assets/dokumentasi/10.jpg" alt="Dokumentasi 6" />
+    <section id="dokumentasi" class="py-5">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="fw-bold">Dokumentasi Proyek</h2>
+          <p class="text-muted">Momen berharga selama proses kreasi kami</p>
+        </div>
+
+        <div class="masonry-grid">
+          <!-- Contoh item dengan aspect ratio berbeda -->
+          <div class="masonry-item landscape" data-bs-aspect="1.91">
+            <img src="assets/dokumentasi/1.jpg" alt="Dokumentasi 1" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/2.jpg" alt="Dokumentasi 2" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/3.jpg" alt="Dokumentasi 3" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/4.jpg" alt="Dokumentasi 4" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/5.jpg" alt="Dokumentasi 5" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/6.jpg" alt="Dokumentasi 6" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/7.jpg" alt="Dokumentasi 7" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/8.jpg" alt="Dokumentasi 8" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/9.jpg" alt="Dokumentasi 9" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/10.jpg" alt="Dokumentasi 10" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="0.75">
+            <img src="assets/dokumentasi/11.jpg" alt="Dokumentasi 11" />
+          </div>
+          <div class="masonry-item portrait" data-bs-aspect="1.91">
+            <img src="assets/dokumentasi/12.jpg" alt="Dokumentasi 12" />
+          </div>
+
+          <!-- Lanjutkan untuk gambar lainnya -->
+        </div>
+
+        <!-- Tambahkan lightbox di akhir body -->
+        <div id="docsLightbox" class="lightbox" onclick="closeDocsLightbox(event)">
+          <span class="close-btn" onclick="closeDocsLightbox(event)">&times;</span>
+          <img class="lightbox-content" id="docsLightboxImg" />
+          <div class="lightbox-controls">
+            <button class="lightbox-prev" onclick="navigateDocs(-1, event)">&#10094;</button>
+            <button class="lightbox-next" onclick="navigateDocs(1, event)">&#10095;</button>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Lightbox -->
+    <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+      <img class="lightbox-img" id="lightboxImage" />
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tambahkan script ini sebelum penutup body -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoCarousel = document.getElementById("videoCarousel");
+        const videos = document.querySelectorAll("#videoCarousel video");
+
+        // Inisialisasi carousel
+        const carousel = new bootstrap.Carousel(videoCarousel, {
+          interval: false, // Matikan auto-slide
+          wrap: true,
+        });
+
+        // Simpan status video
+        const videoStates = {};
+        videos.forEach((video) => {
+          videoStates[video.id] = {
+            playing: false,
+            currentTime: 0,
+          };
+
+          video.addEventListener("play", () => {
+            videoStates[video.id].playing = true;
+          });
+
+          video.addEventListener("pause", () => {
+            videoStates[video.id].playing = false;
+            videoStates[video.id].currentTime = video.currentTime;
+          });
+        });
+
+        // Saat slide berpindah
+        videoCarousel.addEventListener("slid.bs.carousel", function (event) {
+          // 1. Dapatkan elemen yang benar
+          const activeItem = document.querySelector("#videoCarousel .carousel-item.active");
+          const prevItems = document.querySelectorAll("#videoCarousel .carousel-item:not(.active)");
+
+          // 2. Pause semua video yang tidak aktif
+          prevItems.forEach((item) => {
+            const video = item.querySelector("video");
+            if (video) {
+              video.pause();
+              videoStates[video.id] = {
+                playing: false,
+                currentTime: video.currentTime,
+              };
+            }
+          });
+
+          // 3. Handle video aktif
+          const activeVideo = activeItem.querySelector("video");
+          if (activeVideo && videoStates[activeVideo.id]?.playing) {
+            activeVideo.currentTime = videoStates[activeVideo.id].currentTime;
+            activeVideo.play().catch((e) => console.log("Autoplay prevented:", e));
+          }
+        });
+      });
+
+      let currentPosterIndex = 0;
+
+      function zoomPoster(img) {
+        const lightbox = document.getElementById("posterLightbox");
+        const lightboxImg = document.getElementById("lightboxImg");
+        const navbar = document.getElementById("mainNavbar");
+
+        // Set image source
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+
+        // Show lightbox
+        lightbox.style.display = "block";
+        document.body.style.overflow = "hidden";
+
+        // Get current poster index
+        const posters = document.querySelectorAll(".poster-img");
+        currentPosterIndex = Array.from(posters).indexOf(img);
+
+        document.body.classList.add("lightbox-open");
+      }
+
+      function closeLightbox(e) {
+        // Only close if clicking directly on overlay or close button
+        if (!e || e.target.className === "lightbox" || e.target.className === "close-btn") {
+          const lightbox = document.getElementById("posterLightbox");
+          const navbar = document.getElementById("mainNavbar");
+
+          // Kembalikan navbar
+          navbar.style.display = "block";
+
+          // Hide lightbox
+          lightbox.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+
+        document.body.classList.remove("lightbox-open");
+      }
+
+      function navigateLightbox(direction, e) {
+        e.stopPropagation();
+
+        const posters = document.querySelectorAll(".poster-img");
+        currentPosterIndex += direction;
+
+        // Handle wrap-around
+        if (currentPosterIndex >= posters.length) currentPosterIndex = 0;
+        if (currentPosterIndex < 0) currentPosterIndex = posters.length - 1;
+
+        // Update lightbox image
+        document.getElementById("lightboxImg").src = posters[currentPosterIndex].src;
+        document.getElementById("lightboxImg").alt = posters[currentPosterIndex].alt;
+      }
+
+      // Initialize carousel
+      document.addEventListener("DOMContentLoaded", function () {
+        new bootstrap.Carousel("#posterCarousel", {
+          interval: 3000,
+          pause: "hover",
+          wrap: true,
+        });
+
+        // Close lightbox when pressing ESC
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            closeLightbox();
+          }
+        });
+
+        // Inisialisasi masonry grid
+        const masonryItems = document.querySelectorAll(".masonry-item");
+
+        masonryItems.forEach((item) => {
+          const aspectRatio = parseFloat(item.dataset.bsAspect);
+          const img = item.querySelector("img");
+
+          // Otomatiskan klasifikasi aspect ratio
+          if (aspectRatio > 1) {
+            item.classList.add("landscape");
+            item.classList.remove("portrait");
+          } else {
+            item.classList.add("portrait");
+            item.classList.remove("landscape");
+          }
+
+          // Lightbox functionality
+          img.addEventListener("click", function () {
+            const lightbox = new bootstrap.Modal(document.getElementById("lightboxModal"));
+            document.getElementById("lightboxImage").src = this.src;
+            lightbox.show();
+          });
+        });
+      });
+
+      // Dokumentasi Lightbox Logic
+      let currentDocIndex = 0;
+      const docImages = Array.from(document.querySelectorAll("#dokumentasi img"));
+
+      function openDocsLightbox(index) {
+        const lightbox = document.getElementById("docsLightbox");
+        const img = docImages[index];
+
+        // Update navbar dan lightbox state
+        document.getElementById("mainNavbar").style.display = "none";
+        document.body.classList.add("lightbox-open");
+
+        // Set konten
+        document.getElementById("docsLightboxImg").src = img.src;
+
+        // Update index
+        currentDocIndex = index;
+
+        // Tampilkan lightbox
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function navigateDocs(direction, e) {
+        e.stopPropagation();
+        currentDocIndex = (currentDocIndex + direction + docImages.length) % docImages.length;
+        openDocsLightbox(currentDocIndex);
+      }
+
+      function closeDocsLightbox(e) {
+        if (e.target.classList.contains("lightbox") || e.target.classList.contains("close-btn")) {
+          document.getElementById("docsLightbox").style.display = "none";
+          document.body.classList.remove("lightbox-open");
+          document.getElementById("mainNavbar").style.display = "block";
+          document.body.style.overflow = "auto";
+        }
+      }
+
+      // Keyboard controls
+      document.addEventListener("keydown", function (e) {
+        if (document.body.classList.contains("lightbox-open")) {
+          if (e.key === "Escape") closeDocsLightbox(e);
+          if (e.key === "ArrowLeft") navigateDocs(-1, e);
+          if (e.key === "ArrowRight") navigateDocs(1, e);
+        }
+      });
+
+      // Inisialisasi klik pada gambar
+      document.querySelectorAll("#dokumentasi img").forEach((img, index) => {
+        img.addEventListener("click", () => openDocsLightbox(index));
+      });
+    </script>
   </body>
 </html>
